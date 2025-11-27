@@ -2,40 +2,30 @@ package src.main.java;
 
 import java.util.*;
 import static src.main.java.util.mathUtils.calcularMedia;
+import static src.main.java.methods.studentsMethods.showStudentsList;
+import static src.main.java.util.printlnUtils.*;
 
 public class siepe {
-
-    public static void showStudentsList(String[] students) {
-        System.out.println("-- Lista de alunos --");
-        for (int i = 0; i < students.length; i++) {
-            System.out.println(i+1+ " - " + students[i]);
-        }
-    }
   public static void main(String[] a) {
     Scanner input = new Scanner(System.in);
-    int firstOption;
+    int homeInput;
+    int exitOption = 3;
     double[] currentStudentGrade = null;
-
 
     String[] students = {"João", "Maria", "Jose"};
     double[] notasJoao = {7.5, 4.3, 10.0, 9.5};
     double[] notasMaria = {5.5, 7.3, 8.0, 7.5};
     double[] notasJose = {8.5, 3.3, 9.5, 9.5};
 
-    System.out.println("-- Bem-Vindo ao Sistema de Notas --");
-    System.out.println("1 - Entrar");
-    System.out.println("2 - Sair");
-    firstOption = input.nextInt();
-    if (firstOption == 1) {
+    homePrintln(); //1-Entrar no sistema 2-Sair / Execução Única
+    homeInput = input.nextInt();
+    int mainInput;
+    if (homeInput == 1) {
     do{
-        System.out.println("-- O que deseja fazer? --");
-        System.out.println("1 - Verificar notas de alunos");
-        System.out.println("2 - Verificar aluno");
-        System.out.println("3 - Cadastrar aluno");
-        System.out.println("4 - Sair");
-        int secondOption = input.nextInt();
+        mainPrintln();
+        mainInput = input.nextInt();
 
-        switch (secondOption) {
+        switch (mainInput) {
           case 1: //Caso escolha verificar notas dos alunos:
             showStudentsList(students);
             System.out.println("-- Qual aluno deseja verificar? --");
@@ -58,24 +48,20 @@ public class siepe {
               default:
                 break;
             }
-            System.out.println("-- O que deseja fazer? --");
-            System.out.println("1 - Calcular a média");
-            System.out.println("2 - Voltar");
-            int mediaChoice = input.nextInt();
-            if (mediaChoice == 1) {
+            averageInputPrintln();
+            int averageInputNum = input.nextInt();
+            if (averageInputNum == 1) {
                calcularMedia(currentStudentGrade);
             }
             continue;
           case 2:
             System.out.println("-- Qual aluno deseja verificar? --");
             showStudentsList(students);
-            int thirdOption = input.nextInt();
-            
 
           default:
             break;
         }
-    }while(firstOption != 2);
+    }while(mainInput != exitOption);
     }
 }
 }
