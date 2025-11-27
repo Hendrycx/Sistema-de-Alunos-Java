@@ -1,8 +1,8 @@
 package src.main.java;
 
 import java.util.*;
-import static src.main.java.util.mathUtils.calcularMedia;
-import static src.main.java.methods.studentsMethods.showStudentsList;
+import static src.main.java.util.mathUtils.*;
+import static src.main.java.methods.studentsMethods.*;
 import static src.main.java.util.printlnUtils.*;
 
 public class siepe {
@@ -57,7 +57,6 @@ public class siepe {
           case 2:
             System.out.println("-- Qual aluno deseja verificar? --");
             showStudentsList(students);
-
           default:
             break;
         }
