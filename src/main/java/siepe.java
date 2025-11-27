@@ -1,28 +1,16 @@
+package src.main.java;
+
 import java.util.*;
+import static src.main.java.util.mathUtils.calcularMedia;
+
 public class siepe {
 
-  public static void calcularMedia(double[] currentStudentGrade) {
-     double soma = 0;
-        for (double n : currentStudentGrade) soma += n;
-        double media = soma / currentStudentGrade.length;
-     if (media < 6) {
-      System.out.println("---");
-      System.out.println("A média desse aluno é: "+ media + ", abaixo da média.");
-      System.out.println("---");
-     }
-     else{
-      System.out.println("---");
-      System.out.println("A média desse aluno é: "+ media + ", acima da média.");
-      System.out.println("---");
-     }
-      }
-
-  public static void studentsList(String[] students) {
-    System.out.println("-- Lista de alunos --");
-    for (int i = 0; i < students.length; i++) {
-      System.out.println(i+1+ " - " + students[i]);
+    public static void showStudentsList(String[] students) {
+        System.out.println("-- Lista de alunos --");
+        for (int i = 0; i < students.length; i++) {
+            System.out.println(i+1+ " - " + students[i]);
+        }
     }
-  }
   public static void main(String[] a) {
     Scanner input = new Scanner(System.in);
     int firstOption;
@@ -49,7 +37,7 @@ public class siepe {
 
         switch (secondOption) {
           case 1: //Caso escolha verificar notas dos alunos:
-            studentsList(students);
+            showStudentsList(students);
             System.out.println("-- Qual aluno deseja verificar? --");
             int studentOption = input.nextInt();
             switch (studentOption) {
@@ -80,7 +68,7 @@ public class siepe {
             continue;
           case 2:
             System.out.println("-- Qual aluno deseja verificar? --");
-            studentsList(students);
+            showStudentsList(students);
             int thirdOption = input.nextInt();
             
 
