@@ -8,10 +8,11 @@ public class printlnUtils {
     }
 
     public static void mainPrintln(){
-        System.out.println("-- O que deseja fazer? --");
-        System.out.println("1 - Verificar notas de alunos");
-        System.out.println("2 - Verificar aluno");
+        System.out.println("---- O que deseja fazer? ----");
+        System.out.println("1 - Ver notas");
+        System.out.println("2 - Cadastrar aluno");
         System.out.println("3 - Sair");
+        System.out.print("Escolha: ");
     }
 
     public static void averageInputPrintln() {
