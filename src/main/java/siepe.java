@@ -8,13 +8,9 @@ import static src.main.java.util.printlnUtils.mainPrintln;
 
 public class siepe {
     public static Scanner input = new Scanner(System.in);
-
     public static void main(String[] a) {
-        Scanner input = new Scanner(System.in);
-        int homeInput;
-        int exitOption = 3;
         homePrintln(); //1-Entrar no sistema 2-Sair / Execução Única
-        homeInput = input.nextInt();
+        int homeInput = input.nextInt();
         int mainInput;
         if (homeInput == 1) {
             do {
@@ -27,7 +23,7 @@ public class siepe {
                     default:
                         break;
                 }
-            } while (mainInput != exitOption);
+            } while (mainInput != 3);
         }
     }
 }
